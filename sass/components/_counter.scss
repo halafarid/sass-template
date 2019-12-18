@@ -1,0 +1,19 @@
+.counter {
+    color: $default;
+    text-align: center;
+
+    .heading {
+        color: $default;
+        font-family: $font-primary;
+        font-size: 10rem;
+        margin-bottom: 0rem;
+    }
+
+    &__span {
+        display: inline-block;
+        width: 30%;
+        line-height: 2;
+        font-weight: $weight-light;
+        margin-top: 13%;
+    }
+}

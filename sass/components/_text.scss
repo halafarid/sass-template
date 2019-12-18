@@ -1,0 +1,64 @@
+.text {
+    &-heading {
+        font-family: $font-secondary;
+        font-weight: $weight-bold;
+        color: $dark;
+    }
+    
+    &-parag {
+        line-height: 1.6;
+        margin: 0;
+
+        &--center {
+            width: 65%;
+            margin: 0 auto;
+        } 
+    }
+
+    &--default {
+        color: $default;
+    }
+
+    &--primary {
+        color: $primary;
+    }
+    
+    &--center {
+        text-align: center;
+    }
+
+    &--right {
+        text-align: right;
+    }   
+
+    &--xl {
+        font-size: 3rem;
+    }
+
+    &--lg {
+        font-size: 2.5rem;
+    }
+
+    &--md {
+        font-size: 1.8rem;
+    }
+
+    &--sm {
+        font-size: 1.4rem;
+    }
+
+    &--light {
+        font-weight: $weight-light;
+    }
+}
+
+.link {   
+    &--default {
+        transition: color 0.3s ease-in-out;
+        color: $default;
+
+        &:hover {
+            color: $primary;
+        }
+    }
+}

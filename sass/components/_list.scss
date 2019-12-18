@@ -1,0 +1,157 @@
+.list {
+    list-style-type: none;
+    
+    
+    &--inline {
+        @include flex(space-between);
+        
+        @include responsive(tablet) {
+            display: none;            
+        }
+    }
+    
+    &--reset {
+        padding: 0;
+        
+        .list__item {
+            margin-left: 0;
+        }
+    }
+
+    &-overlay {
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0,0,0, 0.5);
+        display: none;
+        cursor: pointer;
+        // opacity: 0;
+        // visibility: hidden;
+        
+
+        &--show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        // @include responsive(desktop) {
+        //     opacity:  0;
+        //     visibility: hidden;
+        // }
+    }
+    
+    &__toggle {
+        @include bg-color($linear, $default, $border-transparent);
+        position: absolute;
+        right: 0;
+        width: 40%;
+        height: 100vh;
+        cursor: default;
+
+        .list {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+
+            &__item {
+                margin-bottom: 2.5rem;
+                a {
+                    color: $default;
+                    letter-spacing: 0.1rem;
+                    transition: border-bottom 0.3s ease-in-out;
+
+                    &:hover {
+                        color: $default;
+                        border-bottom: 0.3rem solid $default;
+                    }
+
+                }
+                &--#{$activeClass} {
+                    border-bottom: 0.3rem solid $default;
+                }
+            }
+
+            &-close {
+                position: absolute;
+                top: 2rem;
+                right: 5rem;
+                font-size: 3rem;
+                cursor: pointer;
+            }
+        }
+    }
+
+    &__item {
+        margin: $margin-sm;
+        
+        a {          
+            &:hover {
+                color: $primary;
+            }
+        }
+
+        &--m4 {
+            margin-bottom: 2rem;
+        }
+
+        &--m5 {
+            margin-bottom: 1rem;
+        }
+
+        &--md {
+            font-size: 1.4rem;
+        }
+        
+        &--#{$activeClass} {
+            border-bottom: 0.3rem solid $primary;
+        }
+    }
+
+    &__link { // a
+        display: inline-block;
+        &--default {
+            color: $default;
+        }
+    }
+
+    &__footer {
+        &::before {
+            content: "\00BB";
+            color: $info;
+            margin-right: 1rem;
+        }
+
+        .list__link {
+
+            &--default {
+                transition: all 0.3s ease-in-out;
+                &:hover {
+                    margin-left: 0.5rem;
+                }
+            }
+        }        
+    }
+
+    &__business {
+        .list {
+            &__item {
+                @include flex;
+                position: relative;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 1rem;
+                    width: 100%;
+                    border-bottom: 0.1rem dashed $default;
+                }
+
+                &__span {
+                    position: relative;
+                    display: inline-block;
+                    background-color: $inverse;
+                }
+            }
+        }
+    }
+}

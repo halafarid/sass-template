@@ -1,0 +1,40 @@
+.blog-card {
+    background-color: $default;
+
+    &:hover {
+        .blog-card {
+            &__img {
+                transform: scale(1.2);
+                cursor: pointer;
+            }
+    
+            &__heading{
+                color: $primary;
+                cursor: pointer;
+                transition: all 0.5s ease-in-out;
+            }
+        }
+    }
+
+    @include image-block;
+
+    &__data {
+        padding: 2rem 3rem;
+    }
+
+    &__heading {
+        margin-bottom: 3rem;
+    }
+        
+    &__details {
+        display: inline-block;
+        margin-right: 1rem;
+
+        &:hover {
+            color: $primary;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
+
+    }
+}

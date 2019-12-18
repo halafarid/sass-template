@@ -1,0 +1,28 @@
+.icon {
+    @include bg-color($transparent, $inverse, $border-transparent);
+    transition: all 0.3s ease-in-out;
+    border-radius: $border-circle;
+    cursor: pointer;
+    
+    &--xs {
+        padding: $padding-icon-xs;
+    }
+
+    &--sm {
+        padding: $padding-icon-sm;
+    }
+    &--md {
+        padding: $padding-icon-md;
+    }
+    &--lg {
+        padding: $padding-icon-lg;
+    }
+
+    &--circle {
+        @include bg-color($default, $inverse, $border-inverse);
+    }
+
+    &--transparent {
+        @include bg-color($transparent, $default, $border-default);
+    }
+}

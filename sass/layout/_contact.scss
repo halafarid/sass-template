@@ -1,0 +1,43 @@
+.form {
+    font-family: $font-primary;
+    box-sizing: border-box;
+    color: $info;
+    border: 0.1rem solid #ddd;
+    border-radius: 0.7rem;
+    padding: 1.3rem 1rem;
+    outline: 0;
+    
+    &:focus {
+        border: $border-primary;
+    }
+    
+    &-control {
+        display: block;
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    &-inline {
+        display: inline-block;
+        margin-right: 2rem;
+        width: 22%;
+   }
+}
+
+.contact{
+    &__heading {
+        margin-bottom: 3rem;
+    }
+ 
+    &__icon {
+        transition: background 0.5s ease-in-out;
+        margin-right: 0.5rem;
+        &:hover {
+            @include bg-color($primary, $default, $border-transparent);
+        }
+    }
+
+    &-subscribe {
+       position: relative;
+    }
+}

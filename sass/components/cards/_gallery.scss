@@ -1,0 +1,69 @@
+.gallery {
+    &__box-img {
+        &:hover {
+            .gallery {
+                &__img {
+                    transform: scale(1.2);
+                }
+                &__overlay {
+                    opacity: 0.9;
+                    transform: scale(1);
+                }
+            }
+        }
+    }
+
+    @include image-block;
+
+    &__box-img {
+        position: relative;
+    }
+
+    &__overlay {
+        transform: scale(1.7);
+        background: $radial;
+        @include abs-reset;
+    }
+
+    &__data {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    
+    &__icon {
+        position: relative;
+        margin-right: 1rem;
+        transition: background 0.5s ease-in-out,
+                    color 0s ease-in-out;
+
+        &:hover {
+            @include bg-color($primary, $default, $border-default);
+            transition: all 0.3s ease-in-out;
+        }
+    }
+
+    &__list {
+        text-align: center;
+        margin: 5rem auto 0rem;
+        
+        .list__item {
+            position: relative;
+
+            &:first-child a { color: $primary;}
+
+            &:not(:last-child) {
+                &::after {
+                    content: "/";
+                    position: absolute;
+                    padding-left: 1rem;
+                }
+            }
+        }
+    }
+
+    &__btn {
+        text-align: center;
+        margin-top: 3rem;
+    }
+}

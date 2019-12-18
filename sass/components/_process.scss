@@ -1,0 +1,33 @@
+.process{
+    position: relative;
+
+    &-section {
+        @include bg-color($inverse, $default);
+    }
+
+    &__data {
+        font-size: 1.4rem;
+        margin-top: 1.5rem;
+        margin-right: 2rem;
+    }
+
+    &__work {
+        position: relative;
+
+        &:not(:last-child) {
+            &::after {
+                content: "";
+                position: absolute;
+                top: 22%;
+                left: 69%;
+                width: 61%;
+                height: 0.1rem;
+                background-color: $info;
+            }
+        }
+    }
+
+    &__btn {
+        font-family: $font-primary;
+    }
+}

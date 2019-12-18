@@ -1,0 +1,81 @@
+@mixin bg-color($bg-color, $color, $border: 0rem) {
+    background: $bg-color;
+    color: $color;
+    border: $border;
+}
+
+@mixin bg-image($height, $url...) {
+    background: $url;
+    min-height: $height;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+@mixin image-block {
+    &__box-img {
+        overflow: hidden;
+    }
+
+    &__img {
+        width: 100%;
+        display: block;
+        transition: all 0.3s ease-in-out;
+        margin: 0rem auto;
+    }
+}
+
+@mixin abs-reset {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 0.5s linear;
+}
+
+@mixin flex($justify: space-between, $wrap: wrap, $display: flex) {
+    display: $display;
+    justify-content: $justify;
+    flex-wrap: $wrap;
+}
+
+@mixin bg-social {
+    &:first-child{
+        background-color: #4267B2;
+    }
+
+    &:nth-child(2) {
+        background-color: #1DA1F2;
+    }
+
+    &:nth-child(3) {
+        background-color: #0077B5;
+    }
+    
+    &:last-child {
+        background-image: linear-gradient(20deg, #FDC07D 25%, #e24268 40%, #00f);
+        border: none;
+    }
+}
+
+
+@mixin responsive($device) {
+    @if $device == desktop {
+        @media (min-width: 56.25rem) {
+            @content;
+        }
+    }
+
+    @if $device == tablet {
+        @media (max-width: 56.25em) {
+            @content;
+        }
+    }
+
+    @if $device == mobile {
+        @media (max-width: 37.5em) {
+            @content;
+        }
+    }
+}

@@ -1,0 +1,99 @@
+.price-table {
+    box-shadow: 1rem 1rem 1rem rgba($info, 0.2);
+    padding-bottom: 3.5rem;
+    transition: background 0.5s ease-in-out;
+    position: relative;
+    background-color: $default;
+       
+    &:hover {
+        @include bg-color($dark, $default);
+        .price-table {
+            &__shape {
+                border-color: transparent transparent $dark;
+            }
+            
+            &__btn {
+                &.btn--primary {
+                    display: none;
+                }
+                &.btn--transparent {
+                    display: inline-block;
+                }
+            }
+    
+            &__name, &__version, &__amount, &__icon.fas {
+                color: $default;
+            }
+        }
+    }
+
+    &__data {
+        padding: 1rem 0rem 2rem;
+    }
+
+    &__sale {
+        @include bg-color($warn, $default);
+        padding: 1rem 0.5rem 0rem;
+        overflow: hidden;
+        position: absolute;
+        top: 0rem;
+        right: 2rem;
+    }   
+    
+    &__shape {
+        border-style: solid;
+        border-width: 0.5rem 2rem 1.5rem;
+        border-color: transparent transparent $default;
+        transform: scale(1.7);
+        transition: all 0.5s ease-in-out;
+    }
+
+    &__amount {
+        color: $dark;
+        margin: $margin-md;
+        border: {
+            top: $border-basic rgba(139, 144, 157, 0.18);
+            bottom: $border-basic rgba(139, 144, 157, 0.18);
+        }
+
+        &-bounds {
+            margin: 2.5rem 0rem;
+            display: inline-block;
+
+            font: {
+                weight: $weight-light;
+                size: 5rem;             
+            }
+        }
+    }
+
+    &__list {
+        list-style-type: none;
+        width: 70%;
+        margin: 2rem auto;
+
+        &__item {
+            text-align: left;
+            padding-bottom: 1.5rem;
+        }
+    }
+
+    &__icon {
+        padding-right: 1rem;
+        
+        &.fa-check {
+            color: #B2CB20;  
+        }
+    
+        &.fa-times {
+            color: $warn;
+        }
+    }
+
+
+    &__btn {
+        &.btn--transparent {
+            display: none;
+        }
+    }
+}

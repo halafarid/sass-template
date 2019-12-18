@@ -1,0 +1,14 @@
+.header {
+    @include flex(space-around);
+
+    background-color: $default;
+    box-shadow: 0.1rem 0.1rem 1rem $info;
+    z-index: 1;
+
+    &--fixed {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 900;
+    }
+}

@@ -1,0 +1,46 @@
+.footer {
+    background-color: $inverse;
+    color: $default;
+    min-height: 35rem;
+    padding-top: 10rem;
+    margin-top: -3.5rem;
+
+    &__icon {
+        margin-right: 0.5rem;
+
+        &:hover {
+            @include bg-social;
+            border: $border-transparent;
+        }
+    }
+
+    &__heading {
+        margin-bottom: 3rem;
+    }
+}
+
+.news {
+    &__parag, &__span {
+        transition: all 0.3s ease-in-out;
+    }
+
+    &:hover {
+        .news {
+            &__parag {
+            color: $primary;
+            cursor: pointer;
+            }
+            &__span {
+                color: $default;
+            }
+        }
+    }
+
+    &__line {
+        border: none;
+        border-top: $border-info;
+        margin: 1.5rem 0rem;
+        width: 90%;
+    }
+}
+

@@ -1,0 +1,151 @@
+.btn {
+    // Main Button
+    @include bg-color($default, $dark, $border-dark);
+    border-radius: $border-curve;
+    font-family: $font-secondary;
+    padding: $padding-sm;
+    display: inline-block;
+
+    transition: background 0.3s ease-in-out;
+
+    text: {
+        align: center;
+    }
+
+    // Button Size
+    &--md {
+        padding: $padding-md;
+    }
+
+    &--lg {
+        padding: $padding-lg;
+    }
+
+    &--wide {
+        width: 100%;
+        padding: $padding-lg;
+        box-sizing: border-box;
+    }
+
+    // Button Types
+    // Aqua
+    &--primary {
+        @include bg-color($primary, $default, $border-primary);
+
+        &:hover {
+            @include bg-color($transparent, $primary, $border-primary);
+        }
+    }
+    // Gradient
+    &--gradient {
+        @include bg-color($gradient, $default, $border-transparent);
+        background-size: 200%;
+
+        &:hover {
+            background-position: right;
+        }
+    }
+    // Transparent
+    &--transparent {
+        @include bg-color($transparent, $default, $border-default);
+
+        &:hover {
+            @include bg-color($default, $dark, $border-default);
+        }
+    }
+    // Black
+    &--inverse {
+        @include bg-color($inverse, $default, $border-inverse);
+
+        &:hover {
+            @include bg-color($transparent, $dark, $border-dark);
+        }
+    }
+
+    &--menu {
+        width: 2.5rem;
+        flex-direction: column;
+        align-items: flex-end;
+        margin-left: 2.5rem;
+        
+        display: none;
+        
+        @include responsive(tablet) {
+            @include flex(center);
+        }
+        
+        &-side {
+            border-bottom: 0.2rem solid $dark;
+            padding-bottom: 0.3rem;
+            transition: width 0.5s ease-in-out;
+            width: 100%;
+            
+            &:nth-child(2) {
+                width: 70%;
+            }
+            &:last-child {
+                width: 50%;
+            }
+        }
+
+        &:hover {
+            cursor: pointer;
+            .btn--menu-side {
+                width: 100%;
+            }
+        }
+    }
+
+    &--circle {
+        border-radius: $border-circle;
+        
+        &--md {
+            padding: $padding-icon-md;
+        }
+        &--lg {
+            padding: $padding-icon-lg;
+            font: {
+                size: 2.5rem;
+                weight: $weight-bolder;
+                family: $font-secondary;
+            }
+        }
+
+        &.btn--primary {
+            &:hover {
+                background-color: $default;
+                animation: pulse 1s ease-in-out infinite normal none;
+            }
+        }
+
+        &.btn--transparent {
+            position: relative;
+            &::before {
+                content: "";
+                @include bg-color($linear, $default);
+                @include abs-reset;
+                border-radius: 50%;
+            }
+            
+            &:hover {
+                @include bg-color($linear, $default, $border-transparent);
+                &::before {
+                    opacity: 1;
+                    z-index: -1;
+                }
+            }
+        }
+    }
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0rem 0rem 0rem 0.3rem rgba(36, 205, 213, 0.6);
+    }
+    50% {
+        box-shadow: 0rem 0rem 0rem 0.6rem rgba(36, 205, 213, 0.5);
+    }
+    100% {
+        box-shadow: 0rem 0rem 0rem 1rem rgba(36, 205, 213, 0.2);
+    }
+}

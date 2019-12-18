@@ -1,0 +1,247 @@
+.about {
+    @include flex;
+    margin: 7rem 0rem;
+
+    &__info {
+        width: 45%;
+    }    
+    &__img {
+        width: 80%;     
+    }
+}
+
+.process {
+    background-color: $inverse;
+    text-align: center;
+    padding: 10rem 0rem;
+
+    &-section {
+        @include flex(flex-start, nowrap);
+        padding-top: 5rem;
+    }
+}
+
+
+.all-services {
+    margin: 10rem 0rem;
+    display: grid;
+    grid-template-areas:"info info info" 
+                        "service-1 mobile service-2"
+                         "service-3 mobile service-4";
+    gap: 0% 7%;
+
+    .service {
+        &:nth-child(1) {grid-area: info;}
+        &:nth-child(2) { grid-area: service-1; align-self: center;}
+        &:nth-child(3) { grid-area: mobile;}
+        &:nth-child(4) { grid-area: service-2; align-self: center;}
+        &:nth-child(5) { grid-area: service-3;}
+        &:nth-child(6) { grid-area: service-4;}
+
+        &__info {
+            @include flex;
+            margin-bottom: 3rem ;
+        }
+    }
+    .heading__parag { width: 45%;}
+}
+
+.counter {
+    @include bg-image(40rem, url(../images/counter.jpg));
+    background-position: 0rem 30%;
+
+    &-section {
+        @include flex(space-around);
+    }
+}
+
+.team {
+    margin: 10rem 0rem 3rem;
+    @include flex;
+    .heading__parag { width: 45%;}
+}
+.all-teams {
+    @include flex(flex-start);
+
+    @include responsive(tablet) {
+        @include flex(space-around);
+    }
+
+    @include responsive(mobile) {
+        @include flex(flex-end);
+        width: 70%;
+    }
+}
+
+
+.price {
+    background-color: $light;
+    padding: 25rem 0rem 15rem;
+    margin-top: -12.5rem;
+    text-align: center;
+
+    &__info {
+        margin-bottom: 6rem;
+    }
+
+    &__btn {
+        border: none;
+        margin-right: -4rem;
+        
+        &-1 {
+            position: relative;
+            z-index: 2;
+        }
+    }
+}
+.all-price-tables {
+    @include flex;
+
+    @include responsive(tablet) {
+        @include flex(center)
+    }
+
+}
+.price-table { 
+    width: 30%;
+    
+    @include responsive(tablet) {
+        width: 45%;
+        margin: 0rem 2rem 3rem 0rem ;
+    }
+
+    @include responsive(mobile) {
+        width: 60%;
+    }
+
+}
+
+
+.gallery {
+    display: grid;
+    grid-template-areas: "gallery-1 gallery-2 gallery-3"
+                         "gallery-1 gallery-5 gallery-3"
+                         "gallery-4 gallery-5 gallery-6";
+    
+    &__box-img {
+        &:nth-child(1) { grid-area: gallery-1;}
+        &:nth-child(2) { grid-area: gallery-2;}
+        &:nth-child(3) { grid-area: gallery-3;}
+        &:nth-child(4) { grid-area: gallery-4;}
+        &:nth-child(5) { grid-area: gallery-5;}
+        &:nth-child(6) { grid-area: gallery-6;}
+    }
+    &-section {
+        padding: 10rem 0rem;
+    }
+    &__info {
+        text-align: center;
+    }
+}
+
+.logos {
+    padding: 10rem 0rem;
+    background-color: $light;
+}
+.logo {
+    @include flex;
+
+    &__img { cursor: pointer;}
+}
+
+.testimonials {
+    @include bg-image(30rem, url(../images/testimonial/testimonial-bg.jpg));
+    position: relative;
+
+    &__info {
+        text-align: right;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 11%;
+    }
+}
+.carousel {
+    margin-top: -6%;
+    background-color: $light;
+    padding-bottom: 10rem;
+    &__client {
+        z-index: 2;
+    }
+}
+
+.video {
+    @include flex;
+    position: relative;
+
+    &__info {
+        width: 40%;
+        transform: translateY(28%);
+        margin: 0rem 2% 0rem 6%;
+    }
+
+    &__box-img {
+        width: 50%;
+    }
+    &__img {
+        width: 100%;
+    }
+
+    &__btn {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.blog {
+    padding: 10rem 0rem;
+    background-color: $light;
+    
+    &-card {
+        margin-top: 5rem;
+        width: 30%;
+    }
+}
+.all-blogs {
+    @include flex;
+}
+
+.contact {
+    background-color: $light;
+
+    &-section {
+        background-color: $default;
+        padding: 5rem 0rem 5rem 2rem;
+    }
+    &__form {
+        width: 45%;
+    }
+    
+    &__details {
+        width: 45%;
+    }
+    
+}
+.all-contact {
+    margin: 3rem 0rem;
+    @include flex;
+}
+
+.service-loc { padding: 7rem 0rem 10rem;}
+.all-locations {
+    @include flex;
+}
+
+.footer {
+    &__items {
+        @include flex;
+    }
+    &__item {
+        width: 23%;
+    }
+
+    &__logo { margin-bottom: 2rem;}
+    &__icons { margin-top: 2rem;}
+}

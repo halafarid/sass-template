@@ -1,0 +1,53 @@
+// Font-Family
+$font-default: Arial, Helvetica, sans-serif;
+$font-primary: 'Open Sans', font-default;
+$font-secondary: montserrat, font-default;
+
+// Colors
+$primary: #24CDD5;
+$primary-dark: #4F95E0;
+$default: #fff;
+$info: #808080;
+$light: #F6F7F8;
+$inverse: #26313c;
+$warn:#E84455;
+$dark: #384141;
+$warning: #FFC13C;
+$gradient: linear-gradient(to right, $primary-dark 0%, $primary 40%, $primary-dark 100%);
+$linear: linear-gradient(to right, $primary-dark 45%, $primary 100%);
+$radial: radial-gradient(circle 16rem at 45% 50%, $primary, $primary-dark);
+$transparent: transparent;
+
+
+// Padding
+$padding-sm: 0.5rem 1.5rem;
+$padding-md: 1rem 3.5rem;
+$padding-lg: 1rem 10rem;
+
+$padding-icon-xs: 0.7rem 0.9rem;
+$padding-icon-sm: 1rem 1.2rem;
+$padding-icon-md: 2rem 2.5rem;
+$padding-icon-lg: 2.5rem 3rem;
+
+// Margin
+$margin-sm: 0.5rem 1.5rem;
+$margin-md: 1.5rem 2.5rem;
+
+// Border
+$border-basic: 0.1rem solid;
+$border-dark: $border-basic $dark;
+$border-primary: $border-basic $primary;
+$border-transparent: $border-basic $transparent;
+$border-default: $border-basic $default;
+$border-inverse: $border-basic $inverse;
+$border-info: $border-basic $info;
+$border-curve: 2rem;
+$border-circle: 50%;
+
+// Weight
+$weight-light: 200;
+$weight-bold: 400;
+$weight-bolder: 600;
+
+// Class
+$activeClass: "active";

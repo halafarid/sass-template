@@ -1,0 +1,53 @@
+.team-card {
+    transition: background 0.3s ease-in-out;
+    background: linear-gradient(to bottom, $default 50%, transparent 50%), $linear;
+    background-size: 100% 200%, 200% 100%;
+
+    &:hover {
+        color: $default;
+        background-position: 0, 100%;
+        
+        .team-card {
+            
+            &__data {
+                transform: translate(0rem, -0.5rem);
+            }
+
+            &__name, &__position {
+                color: $default;
+            }
+            &__img {
+                transform: scale(1.1);
+            }
+        }
+        
+        .icon {
+            opacity: 1;               
+        }
+    }
+
+    @include image-block;
+
+    &__data {
+        padding: 0.5rem;
+        transform: translate(0rem, 1rem);
+        transition: transform 0.3s ease-in-out,
+                    color 0s ease 0.2s;
+
+        &:hover {
+            transition: transform 0.3s ease-in-out,
+                        color 0s ease 0s;
+        }
+    }
+
+    &__icon {
+        opacity: 0;
+        color: $default;
+        margin-top: 1rem;
+        transition: background 0.5s ease-in-out;
+
+        &:hover {
+            @include bg-social;
+        }
+    }
+}

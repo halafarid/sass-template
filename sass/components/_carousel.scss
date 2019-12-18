@@ -1,0 +1,63 @@
+.carousel {
+    @include image-block;
+    @include flex(space-around);  
+    align-items: flex-end;
+
+    &:hover {
+        .carousel--circle {
+            transform: scale(1.2);
+        }
+    }
+
+    &-indicators {
+        writing-mode: vertical-rl;
+    }
+
+    &-indicator {
+        display: inline-block;
+        width: 1.2rem;
+        height: 1.2rem;
+        background-color: $info;
+        border-radius: $border-circle;
+        margin-bottom: 0.5rem;
+        cursor: pointer;
+
+        &.active {
+            background-color: $primary;
+            border: 0.2rem solid $default;
+        }
+    }
+
+    &__client {
+        width: 20%;
+    }
+
+    &__box-img {
+        overflow: hidden;
+        display: inline-block;
+        border-radius: $border-circle;
+        width: 60%;
+    }
+
+    .icon {
+        height: 1.5rem;
+        &:hover {
+            @include bg-color($gradient, $default, $border-transparent);
+            transition: color 0s ease-in-out;
+        }
+    }
+
+    &__data {
+        @include flex(space-around);
+        align-items: baseline;
+    }
+
+
+    &__testimonial {
+        width: 40%;
+    }
+
+    .rate__icon {
+        color: $warning;
+    }
+}
